@@ -4,7 +4,6 @@ from GameWorkspace.Scenes.StartScene import StartScene
 import pygame as pg
 
 
-
 class MyFirstGame(Game) :
     def __init__(self):
         super().__init__(1000,600,self)
@@ -16,3 +15,7 @@ class MyFirstGame(Game) :
     def update(self):
         pg.display.set_caption(str(self.game.dt))
         super().update()
+
+
+
+MyFirstGame().run()
