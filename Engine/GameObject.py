@@ -25,10 +25,6 @@ class GameObject(ABC) :
 
     def update(self,dt):
 
-        if self.tracked :
-            Camera.DX = self.transform.position.x - Game.Game.game.width/2
-            Camera.DY = self.transform.position.y - Game.Game.game.height/2
-
         if(not self.destroy) :
             for composant in self.Components:
                 composant.update(dt)
@@ -36,6 +32,10 @@ class GameObject(ABC) :
                     break
         else :
             Game.Game.game.CurrentScene.removeGameObject(self)
+
+        if self.tracked :
+            Camera.DX = self.transform.position.x - Game.Game.game.width/2
+            Camera.DY = self.transform.position.y - Game.Game.game.height/2
 
 
     def addComponent(self, composant):

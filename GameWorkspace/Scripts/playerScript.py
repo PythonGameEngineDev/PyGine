@@ -3,7 +3,6 @@ import GameWorkspace
 from Engine import Game, Debug, KeyListener
 from Engine.Camera import Camera
 from Engine.Component import Component
-from Engine.Components.ShapeComponent import ShapeComponent
 from Engine.Components.TextComponent import TextComponent
 from Engine.Vector3 import Vector3
 import pygame as pg
