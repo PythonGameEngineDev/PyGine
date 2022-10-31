@@ -14,7 +14,7 @@ class StartScene(Scene):
 
         self.addGameObject(self.player)
 
-        for i in range(1) :
+        for i in range(10000) :
             self.addGameObject(Monster())
 
         super().start()

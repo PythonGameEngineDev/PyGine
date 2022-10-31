@@ -25,7 +25,6 @@ class DrawRectComponent(Component) :
                                                  (int(self.transform.scale.x * Camera.ZX),
                                                   int(self.transform.scale.y * Camera.ZY))))
 
-
     def getSprite(self) :
         return self.sprite
 
