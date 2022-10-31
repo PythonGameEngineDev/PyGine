@@ -14,7 +14,7 @@ class MonsterScript(Component) :
 
     def start(self):
         self.parent.transform.position = Vector3(random.Random().randint(-1000, 1000), random.Random().randint(-500, 500), 0)
-        self.parent.transform.scale = Vector3(1000,1000,10)
+        self.parent.transform.scale = Vector3(100,100,10)
         Debug.PrintDebug("monsterScript start")
 
     def update(self,dt):
