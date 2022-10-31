@@ -20,15 +20,11 @@ class PlayerScript(Component) :
         Debug.PrintDebug("PlayerScript start")
 
     def update(self, dt):
-
         self.parent.transform.position.y -= self.speed*dt * KeyListener.getPressed(pg.K_z)
         self.parent.transform.position.y += self.speed*dt * KeyListener.getPressed(pg.K_s)
-
         self.parent.transform.position.x -= self.speed*dt * KeyListener.getPressed(pg.K_q)
         self.parent.transform.position.x += self.speed*dt * KeyListener.getPressed(pg.K_d)
-
         self.parent.getComponent(TextComponent).setText(str(self.points))
-
 
         """
         if self.parent.transform.position.x > 1000 or self.parent.transform.position.y > 600 :

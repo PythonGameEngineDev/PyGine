@@ -14,10 +14,12 @@ class Player(GameObject) :
 
     def start(self):
         Debug.PrintDebug("player start")
-        self.addComponent(DrawCircleComponent(self,(255,255,255)))
-        self.addComponent(playerScript.PlayerScript(self))
+
+        self.addComponent(DrawCircleComponent(self, (255, 255, 255)))
+        self.addComponent(TextComponent(self, "None"))
         self.addComponent(CircleColliderComponent(self))
-        self.addComponent(TextComponent(self,"None"))
+
+        self.addComponent(playerScript.PlayerScript(self))
 
         super().start()
 

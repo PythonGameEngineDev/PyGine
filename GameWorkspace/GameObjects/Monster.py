@@ -5,7 +5,7 @@ from Engine.GameObject import GameObject
 from GameWorkspace.Scripts.MonsterScript import MonsterScript
 
 
-class Monster(GameObject) :
+class Monster(GameObject):
     def __init__(self):
         super().__init__("Monster")
 
@@ -16,6 +16,7 @@ class Monster(GameObject) :
         self.addComponent(MonsterScript(self))
         self.addComponent(BoxColliderComponent(self))
         super().start()
+
     def update(self,dt):
         super().update(dt)
 

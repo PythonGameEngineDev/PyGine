@@ -11,7 +11,6 @@ class Scene(ABC) :
     def start(self):
         for go in self.GameObjects:
             go.start()
-
         self.Used = True
 
 
@@ -19,6 +18,7 @@ class Scene(ABC) :
 
         for i in range(len(self.GameObjects)):
             self.GameObjects[i].update(dt)
+
         if(len(self.toBeRemoved) > 0) :
             self.rm()
 

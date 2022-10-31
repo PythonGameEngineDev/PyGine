@@ -23,5 +23,5 @@ class TextComponent(Component) :
         self.textcmp = self.font.render(text,True,self.color)
 
     def update(self,dt):
-        Window.Game.game.surface.blit(self.textcmp,((int(self.transform.position.x + self.parent.transform.position.x - Camera.DX ),int(self.transform.position.y + self.parent.transform.position.y) - Camera.DY), (int(self.transform.scale.x*Camera.ZX), int(self.transform.scale.y*Camera.ZY))))
+        Window.Game.game.surface.blit(self.textcmp,((int(self.transform.position.x + self.parent.transform.position.x - Camera.DX ),int(self.transform.position.y + self.parent.transform.position.y- Camera.DY) ), (int(self.transform.scale.x*Camera.ZX), int(self.transform.scale.y*Camera.ZY))))
 
