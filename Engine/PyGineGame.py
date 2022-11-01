@@ -27,27 +27,36 @@ class Game(ABC) :
         self.CurrentSceneID = -1
         self.scenes = []
 
+
+
     def run(self):
         while self.running:
             self.dt = self.clock.tick(self.fps)
-            self.update()
+            self.Mupdate()
             self.FEN.blit(self.surface, (0, 0))
             pg.display.flip()
 
     def update(self):
+        pass
+
+    def Mupdate(self):
+        self.update()
         for e in pg.event.get() :
             if e.type == pg.QUIT :
                 exit()
-        self.CurrentScene.update(self.dt)
+        self.CurrentScene.Mupdate(self.dt)
 
 
     def setScene(self, ID):
         if self.CurrentScene :
-            self.CurrentScene.end()
+            self.CurrentScene.Mend()
         self.CurrentSceneID = ID
         self.CurrentScene = self.scenes[ID]
-        self.CurrentScene.start()
+        self.CurrentScene.Mstart()
 
+
+    def instanciate(self,obj):
+        self.getCurrentScene().addGameObject(obj)
 
     def getSceneID(self):
         return self.CurrentSceneID
@@ -58,3 +67,6 @@ class Game(ABC) :
     def addScene(self,scene):
         self.scenes.append(scene)
 
+
+def get():
+    return Game.game

@@ -1,6 +1,6 @@
 import random
 import GameWorkspace
-from Engine import Game, Debug, KeyListener
+from Engine import PyGineGame, Debug, KeyListener
 from Engine.Camera import Camera
 from Engine.Component import Component
 from Engine.Components.TextComponent import TextComponent

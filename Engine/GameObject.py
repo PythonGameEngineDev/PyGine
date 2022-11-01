@@ -1,6 +1,6 @@
 from abc import ABC
 
-from Engine import Game
+from Engine import PyGineGame
 from Engine.Camera import Camera
 from Engine.Transform import Transform
 
@@ -15,15 +15,21 @@ class GameObject(ABC) :
         self.tracked = False
         self.Used = False
 
-
     def start(self):
+        pass
+
+
+    def Mstart(self):
+        self.start()
         for c in self.Components :
             c.start()
         self.Used = True
 
-
-
     def update(self,dt):
+        pass
+
+    def Mupdate(self,dt):
+
 
         if(not self.destroy) :
             for composant in self.Components:
@@ -31,12 +37,13 @@ class GameObject(ABC) :
                 if(self.destroy) :
                     break
         else :
-            Game.Game.game.CurrentScene.removeGameObject(self)
+            PyGineGame.get().CurrentScene.removeGameObject(self)
 
         if self.tracked :
-            Camera.DX = self.transform.position.x - Game.Game.game.width/2
-            Camera.DY = self.transform.position.y - Game.Game.game.height/2
+            Camera.DX = self.transform.position.x - PyGineGame.get().width/2
+            Camera.DY = self.transform.position.y - PyGineGame.get().height/2
 
+        self.update(dt)
 
     def addComponent(self, composant):
         if self.Used :
@@ -54,6 +61,9 @@ class GameObject(ABC) :
             if el.__class__ == class_ :
                 return el
         return None
+
+    def Mend(self):
+        self.end()
 
     def end(self):
         pass

@@ -3,7 +3,7 @@ import pygame as pg
 
 from Engine.Camera import Camera
 from Engine.Component import Component
-import Engine.Game as Game
+import Engine.PyGineGame as Game
 from Engine.Transform import Transform
 
 
@@ -14,7 +14,7 @@ class BoxColliderComponent(Component) :
         self.transform = parent.transform
 
     def update(self,dt) :
-        pg.draw.rect(Game.Game.game.surface, (0,0,0),((
+        pg.draw.rect(Game.get().surface, (0,0,0),((
                                                  int(self.transform.position.x - Camera.DX),
                                                  int(self.transform.position.y - Camera.DY) ),
                                                  (int(self.transform.scale.x * Camera.ZX),

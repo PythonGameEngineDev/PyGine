@@ -7,19 +7,34 @@ class Scene(ABC) :
         self.toBeRemoved = []
         self.Used = False
 
-    def start(self):
+    def Mstart(self):
+        self.start()
         for go in self.GameObjects:
-            go.start()
+            go.Mstart()
         self.Used = True
 
 
-    def update(self,dt):
-
+    def Mupdate(self,dt):
+        self.update(dt)
         for i in range(len(self.GameObjects)):
-            self.GameObjects[i].update(dt)
+            self.GameObjects[i].Mupdate(dt)
 
         if(len(self.toBeRemoved) > 0) :
             self.rm()
+
+
+
+    def Mend(self):
+        self.end()
+        self.toBeRemoved.extend(self.GameObjects)
+
+    def start(self):
+        pass
+
+
+    def update(self,dt):
+        pass
+
 
     def addGameObject(self, gameObject):
         if self.Used :
@@ -30,12 +45,12 @@ class Scene(ABC) :
     def  rm(self):
         for go in self.toBeRemoved :
             if go in self.GameObjects :
-                go.end()
+                go.Mend()
                 self.GameObjects.remove(go)
         self.toBeRemoved.clear()
 
     def end(self):
-        self.toBeRemoved.extend(self.GameObjects)
+        pass
 
 
     def removeGameObject(self, gameObject):

@@ -1,5 +1,5 @@
 import random
-from Engine import Game, Debug
+from Engine import PyGineGame, Debug
 from Engine.Component import Component
 from Engine.Components.BoxColliderComponent import BoxColliderComponent
 from Engine.Components.CircleColliderComponent import CircleColliderComponent
@@ -19,7 +19,7 @@ class MonsterScript(Component) :
         Debug.PrintDebug("monsterScript start")
 
     def update(self,dt):
-        if(Game.Game.game.getCurrentScene().player.getComponent(CircleColliderComponent).collide(self.parent.getComponent(BoxColliderComponent))) :
+        if(PyGineGame.get().getCurrentScene().player.getComponent(CircleColliderComponent).collide(self.parent.getComponent(BoxColliderComponent))) :
 
 
             self.R = min(self.R+dt*1.2,255)
@@ -27,7 +27,7 @@ class MonsterScript(Component) :
             self.parent.getComponent(DrawRectComponent).color = (self.R,0,0)
             if self.R > 254 :
                 self.parent.destroy = True
-                Game.Game.game.getCurrentScene().player.getComponent(PlayerScript).points+=1
+                PyGineGame.get().getCurrentScene().player.getComponent(PlayerScript).points+=1
 
         else :
 

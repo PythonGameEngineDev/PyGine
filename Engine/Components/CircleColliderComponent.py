@@ -1,6 +1,6 @@
 import math
 
-from Engine import Debug, Game
+from Engine import Debug, PyGineGame
 from Engine.Camera import Camera
 from Engine.Component import Component
 import pygame as pg
@@ -12,7 +12,7 @@ class CircleColliderComponent(Component) :
 
     def update(self,dt) :
 
-        pg.draw.circle(Game.Game.game.surface,(0,0,0,100),(int(self.transform.position.x - Camera.DX),
+        pg.draw.circle(PyGineGame.get().surface,(0,0,0,100),(int(self.transform.position.x - Camera.DX),
                          int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX,1)
 
 

@@ -1,4 +1,4 @@
-from Engine.Game import Game
+from Engine.PyGineGame import Game
 from GameWorkspace.Scenes.SecondScene import SecondScene
 from GameWorkspace.Scenes.StartScene import StartScene
 import pygame as pg

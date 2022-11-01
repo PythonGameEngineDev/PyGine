@@ -1,4 +1,4 @@
-import Engine.Game as Window
+import Engine.PyGineGame as Game
 import pygame as pg
 
 from Engine.Camera import Camera
@@ -19,7 +19,7 @@ class DrawRectComponent(Component) :
         pass
 
     def update(self,dt) :
-        pg.draw.rect(Window.Game.game.surface, self.color,((
+        pg.draw.rect(Game.get().surface, self.color,((
                                                  int(self.transform.position.x - Camera.DX),
                                                  int(self.transform.position.y - Camera.DY) ),
                                                  (int(self.transform.scale.x * Camera.ZX),

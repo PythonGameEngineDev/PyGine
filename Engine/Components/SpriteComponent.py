@@ -1,4 +1,4 @@
-import Engine.Game as Window
+import Engine.PyGineGame as Window
 import pygame as pg
 import pygame.gfxdraw as gfxdraw
 from Engine.Component import Component

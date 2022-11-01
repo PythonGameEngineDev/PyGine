@@ -1,4 +1,4 @@
-import Engine.Game as Window
+import Engine.PyGineGame as Game
 import pygame as pg
 
 from Engine.Camera import Camera
@@ -20,7 +20,7 @@ class DrawCircleComponent(Component) :
 
     def update(self,dt) :
 
-        pg.draw.circle(Window.Game.game.surface,self.color,(int(self.transform.position.x - Camera.DX),
+        pg.draw.circle(Game.get().surface,self.color,(int(self.transform.position.x - Camera.DX),
                          int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX)
 
 
