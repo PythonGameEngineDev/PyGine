@@ -1,6 +1,6 @@
 import random
 import GameWorkspace
-from Engine import PyGineGame, Debug, KeyListener
+from Engine import PyGineGame as Game, Debug, KeyListener
 from Engine.Camera import Camera
 from Engine.Component import Component
 from Engine.Components.TextComponent import TextComponent
@@ -14,9 +14,7 @@ class PlayerScript(Component) :
         self.points = 0
 
     def start(self):
-        self.parent.transform.position = Vector3(0,0, 0)
-        self.parent.transform.scale = Vector3(100,100,100)
-        self.parent.AttachCamera(True)
+
         Debug.PrintDebug("PlayerScript start")
 
     def update(self, dt):
@@ -25,6 +23,7 @@ class PlayerScript(Component) :
         self.parent.transform.position.x -= self.speed*dt * KeyListener.getPressed(pg.K_q)
         self.parent.transform.position.x += self.speed*dt * KeyListener.getPressed(pg.K_d)
         self.parent.getComponent(TextComponent).setText(str(self.points))
+
 
         """
         if self.parent.transform.position.x > 1000 or self.parent.transform.position.y > 600 :

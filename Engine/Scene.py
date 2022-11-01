@@ -7,11 +7,17 @@ class Scene(ABC) :
         self.toBeRemoved = []
         self.Used = False
 
+
+    def earlyStart(self):
+        pass
+
     def Mstart(self):
-        self.start()
+
+        self.earlyStart()
         for go in self.GameObjects:
             go.Mstart()
         self.Used = True
+        self.start()
 
 
     def Mupdate(self,dt):

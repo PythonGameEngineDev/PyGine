@@ -7,12 +7,17 @@ from Engine.Transform import Transform
 
 
 class DrawCircleComponent(Component) :
-    def __init__(self,parent,color ) :
+    def __init__(self,parent,color,InitialRadius=1 ) :
         super().__init__(parent)
+
+
 
         self.parent = parent
 
-        self.transform = parent.transform
+        self.transform = Transform()
+        self.transform.scale.x = InitialRadius
+
+
         self.color = color
 
     def start(self):
@@ -20,8 +25,8 @@ class DrawCircleComponent(Component) :
 
     def update(self,dt) :
 
-        pg.draw.circle(Game.get().surface,self.color,(int(self.transform.position.x - Camera.DX),
-                         int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX)
+        pg.draw.circle(Game.get().surface,self.color,(int((self.parent.transform.position.x + self.transform.position.x) - Camera.DX),
+                         int((self.parent.transform.position.y +self.transform.position.y) - Camera.DY) ) , self.transform.scale.x*Camera.ZX)
 
 
     def getSprite(self) :

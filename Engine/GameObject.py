@@ -14,16 +14,24 @@ class GameObject(ABC) :
         self.destroy = False
         self.tracked = False
         self.Used = False
+        self.started = False
 
     def start(self):
         pass
 
+    def earlyStart(self):
+        pass
+
 
     def Mstart(self):
-        self.start()
-        for c in self.Components :
-            c.start()
-        self.Used = True
+        if not self.started :
+            self.earlyStart()
+            for c in self.Components :
+                c.Mstart()
+            self.started = True
+            self.Used = True
+
+            self.start()
 
     def update(self,dt):
         pass

@@ -26,6 +26,7 @@ class Game(ABC) :
         self.CurrentScene = None
         self.CurrentSceneID = -1
         self.scenes = []
+        self.ShowHitbox = False
 
 
 

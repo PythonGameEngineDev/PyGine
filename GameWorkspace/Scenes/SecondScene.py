@@ -1,17 +1,26 @@
-from Engine import Debug, PyGineGame
+from Engine import Debug, PyGineGame as Game
 from Engine.Scene import Scene
-import Engine.PyGineGame as Window
-from GameWorkspace.GameObjects.Monster import Monster
-from GameWorkspace.GameObjects.Player import Player
+from GameWorkspace.GameObjects.MonsterManager import MonsterManager
+
+from GameWorkspace.Scripts.MonsterManagerScript import MonsterManagerScript
+from GameWorkspace.Scripts.playerScript import PlayerScript
 
 
 class SecondScene(Scene) :
+    def __init__(self):
+        super().__init__()
+        self.monstermanager = MonsterManager(5000)
+
+    def earlyStart(self):
+        Game.get().instanciate(Game.get().player)
+        Game.get().instanciate(self.monstermanager)
+
+
     def start(self):
-        for i in range(1) :
-            PyGineGame.get().instanciate(Player())
-        Debug.PrintDebug("SecondScene start " + str(len(self.GameObjects)) + " game objects")
+
+
+        Debug.PrintDebug("StartScene start " + str(len(self.GameObjects)) + " game objects")
 
     def update(self,dt):
-
-        Window.Game.game.surface.fill((0,100,110))
+        Game.get().surface.fill((0,100,255))
 

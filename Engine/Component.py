@@ -7,7 +7,14 @@ class Component(ABC) :
         self.parent = parent
 
 
+    def Mstart(self):
+        self.earlyStart()
+        self.start()
+
     def start(self):
+        pass
+
+    def earlyStart(self):
         pass
 
     def update(self,dt):
