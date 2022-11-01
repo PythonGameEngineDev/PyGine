@@ -6,9 +6,6 @@ from GameWorkspace.GameObjects.Player import Player
 
 
 class SecondScene(Scene) :
-    def __init__(self):
-        super().__init__("SecondScene")
-
     def start(self):
         for i in range(1) :
             self.addGameObject(Player())

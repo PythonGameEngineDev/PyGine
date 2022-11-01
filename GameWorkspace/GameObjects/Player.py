@@ -8,9 +8,6 @@ from Engine.GameObject import GameObject
 
 
 class Player(GameObject) :
-    def __init__(self):
-        super().__init__("Player")
-
 
     def start(self):
         Debug.PrintDebug("player start")

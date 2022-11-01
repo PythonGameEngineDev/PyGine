@@ -6,7 +6,7 @@ from GameWorkspace.GameObjects.Monster import Monster
 
 class StartScene(Scene):
     def __init__(self):
-        super().__init__("StartScene")
+        super().__init__()
         self.player = Player()
 
 

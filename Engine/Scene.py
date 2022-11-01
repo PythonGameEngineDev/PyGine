@@ -2,10 +2,9 @@ from abc import ABC
 
 
 class Scene(ABC) :
-    def __init__(self,name):
+    def __init__(self):
         self.GameObjects = []
         self.toBeRemoved = []
-        self.name = name
         self.Used = False
 
     def start(self):
