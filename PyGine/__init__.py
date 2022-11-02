@@ -14,6 +14,7 @@ from PyGine.DrawRectComponent import DrawRectComponent
 from PyGine.DrawCircleComponent import DrawCircleComponent
 
 from PyGine.Debug import Debug
+import PyGine.Debug
 from PyGine.PyGineGame import Game
 
 import PyGine.KeyListener
