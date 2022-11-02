@@ -3,9 +3,6 @@ from abc import ABC
 import pygame as pg
 
 from PyGine.Scene import Scene
-from GameWorkspace.Scenes.StartScene import StartScene
-
-
 
 
 class Game(ABC) :
