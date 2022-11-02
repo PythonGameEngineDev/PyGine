@@ -5,11 +5,11 @@ import pygame as pg
 from PyGine.Scene import Scene
 
 
-class Game(ABC) :
+class PyGineGame(ABC) :
 
     game = None
     def __init__(self, width, height,game) :
-        Game.game = game
+        PyGineGame.game = game
         pg.init()
         pg.event.set_allowed([pg.QUIT])
         self.width = width

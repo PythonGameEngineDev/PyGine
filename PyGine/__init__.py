@@ -16,7 +16,9 @@ from PyGine.DrawCircleComponent import DrawCircleComponent
 from PyGine.Debug import *
 
 import PyGine.Debug
-from PyGine.PyGineGame import Game
+
+from PyGine.PyGineGame import PyGineGame
+import PyGine.PyGineGame as Game
 
 import PyGine.KeyListener
 from PyGine.Vector3 import Vector3
