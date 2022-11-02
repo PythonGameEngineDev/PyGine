@@ -9,6 +9,7 @@ class PyGineGame(ABC) :
 
     game = None
     def __init__(self, width, height,game) :
+        pg.display.set_caption("PyGine Window")
         PyGineGame.game = game
         pg.init()
         pg.event.set_allowed([pg.QUIT])
@@ -36,6 +37,10 @@ class PyGineGame(ABC) :
 
     def update(self):
         pass
+
+    def setCaption(self,caption):
+        pg.display.set_caption(caption)
+
 
     def Mupdate(self):
         self.update()
