@@ -6,7 +6,6 @@ from PyGine.Component import Component
 import PyGine.PyGineGame as Game
 from PyGine.Transform import Transform
 
-
 class BoxColliderComponent(Component) :
     def __init__(self,parent) :
         super().__init__(parent)

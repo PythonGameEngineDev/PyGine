@@ -5,7 +5,7 @@ from PyGine.Component import Component
 from PyGine.Camera import Camera
 
 from PyGine.CircleColliderComponent import CircleColliderComponent
-from BoxColliderComponent import BoxColliderComponent
+from PyGine.BoxColliderComponent import BoxColliderComponent
 
 from PyGine.SpriteComponent import SpriteComponent
 from PyGine.TextComponent import TextComponent
@@ -16,6 +16,6 @@ from PyGine.DrawCircleComponent import DrawCircleComponent
 from PyGine.Debug import Debug
 from PyGine.PyGineGame import Game
 
-import KeyListener
-from Vector3 import Vector3
-import ImageLibrary
+import PyGine.KeyListener
+from PyGine.Vector3 import Vector3
+import PyGine.ImageLibrary
