@@ -1,8 +1,8 @@
 from abc import ABC
 
-from Engine import PyGineGame
-from Engine.Camera import Camera
-from Engine.Transform import Transform
+from PyGine import PyGineGame
+from PyGine.Camera import Camera
+from PyGine.Transform import Transform
 
 
 class GameObject(ABC) :

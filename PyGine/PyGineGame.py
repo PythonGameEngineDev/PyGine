@@ -2,7 +2,7 @@ from abc import ABC
 
 import pygame as pg
 
-from Engine.Scene import Scene
+from PyGine.Scene import Scene
 from GameWorkspace.Scenes.StartScene import StartScene
 
 
