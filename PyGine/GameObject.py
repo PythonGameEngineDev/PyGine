@@ -1,6 +1,6 @@
 from abc import ABC
 
-from PyGine import PyGineGame
+from PyGine import PyGinegame as Game
 from PyGine.Camera import Camera
 from PyGine.Transform import Transform
 
@@ -45,11 +45,11 @@ class GameObject(ABC) :
                 if(self.destroy) :
                     break
         else :
-            PyGineGame.get().CurrentScene.removeGameObject(self)
+            Game.get().CurrentScene.removeGameObject(self)
 
         if self.tracked :
-            Camera.DX = self.transform.position.x - PyGineGame.get().width/2
-            Camera.DY = self.transform.position.y - PyGineGame.get().height/2
+            Camera.DX = self.transform.position.x - Game.get().width/2
+            Camera.DY = self.transform.position.y - Game.get().height/2
 
         self.update(dt)
 

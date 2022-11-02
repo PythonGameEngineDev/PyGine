@@ -3,8 +3,6 @@ import pygame as pg
 
 from PyGine.Camera import Camera
 from PyGine.Component import Component
-from PyGine.Transform import Transform
-
 
 class DrawShapeComponent(Component) :
     def __init__(self,parent,color , shape="rect"):

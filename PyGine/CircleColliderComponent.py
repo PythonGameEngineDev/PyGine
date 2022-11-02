@@ -1,6 +1,6 @@
 import math
 
-from PyGine import Debug, PyGineGame as Game
+from PyGine import Debug, PyGinegame as Game
 
 from PyGine.Camera import Camera
 from PyGine.Component import Component
