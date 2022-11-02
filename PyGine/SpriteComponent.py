@@ -1,4 +1,4 @@
-import PyGine.PyGineGame as Window
+import PyGine.PyGinegame as Window
 import pygame as pg
 import pygame.gfxdraw as gfxdraw
 from PyGine.Component import Component

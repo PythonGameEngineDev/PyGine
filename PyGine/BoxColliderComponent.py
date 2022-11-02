@@ -3,7 +3,7 @@ import pygame as pg
 
 from PyGine.Camera import Camera
 from PyGine.Component import Component
-import PyGine.PyGineGame as Game
+import PyGine.PyGinegame as Game
 from PyGine.Transform import Transform
 
 class BoxColliderComponent(Component) :

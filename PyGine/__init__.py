@@ -17,8 +17,8 @@ from PyGine.Debug import *
 
 import PyGine.Debug
 
-from PyGine.PyGineGame import PyGineGame
-import PyGine.PyGineGame as Game
+from PyGine.PyGinegame import PyGineGame
+import PyGine.PyGinegame as Game
 
 import PyGine.KeyListener
 from PyGine.Vector3 import Vector3

@@ -1,6 +1,6 @@
 from PyGine.Camera import Camera
 from PyGine.Component import Component
-import PyGine.PyGineGame as Game
+import PyGine.PyGinegame as Game
 import pygame as pg
 
 

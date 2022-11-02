@@ -1,4 +1,4 @@
-import PyGine.PyGineGame as Game
+import PyGine.PyGinegame as Game
 import pygame as pg
 
 from PyGine.Camera import Camera
