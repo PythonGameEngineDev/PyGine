@@ -67,4 +67,4 @@ class PyGineGame(ABC) :
 
 
 def get():
-    return Game.game
+    return PyGineGame.game
