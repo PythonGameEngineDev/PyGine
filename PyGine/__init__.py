@@ -13,7 +13,7 @@ from PyGine.DrawShapeComponent import DrawShapeComponent
 from PyGine.DrawRectComponent import DrawRectComponent
 from PyGine.DrawCircleComponent import DrawCircleComponent
 
-from PyGine.Debug import *
+from PyGine.Debug import PrintDebug
 
 import PyGine.Debug
 
