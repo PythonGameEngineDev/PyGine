@@ -43,7 +43,7 @@ class Scene(ABC) :
 
     def addGameObject(self, gameObject):
         if self.Used :
-            gameObject.start()
+            gameObject.Mstart()
         self.GameObjects.append(gameObject)
 
 

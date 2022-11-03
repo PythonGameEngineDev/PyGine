@@ -9,7 +9,7 @@ class PyGineGame(ABC) :
 
     game = None
     def __init__(self, width, height,game) :
-        pg.display.set_caption("PyGine Window")
+
         PyGineGame.game = game
         pg.init()
         pg.event.set_allowed([pg.QUIT])
@@ -25,6 +25,7 @@ class PyGineGame(ABC) :
         self.CurrentSceneID = -1
         self.scenes = []
         self.ShowHitbox = False
+        pg.display.set_caption("PyGine Window")
 
     def run(self):
         while self.running:

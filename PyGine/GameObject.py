@@ -30,7 +30,6 @@ class GameObject(ABC) :
                 c.Mstart()
             self.started = True
             self.Used = True
-
             self.start()
 
     def update(self,dt):
@@ -55,7 +54,7 @@ class GameObject(ABC) :
 
     def addComponent(self, composant):
         if self.Used :
-            composant.start()
+            composant.Mstart()
         self.Components.append(composant)
 
 
