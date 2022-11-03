@@ -26,8 +26,6 @@ class PyGineGame(ABC) :
         self.scenes = []
         self.ShowHitbox = False
 
-
-
     def run(self):
         while self.running:
             self.dt = self.clock.tick(self.fps)

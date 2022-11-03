@@ -7,7 +7,6 @@ class Scene(ABC) :
         self.toBeRemoved = []
         self.Used = False
 
-
     def earlyStart(self):
         pass
 
