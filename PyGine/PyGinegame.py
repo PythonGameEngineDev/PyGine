@@ -26,6 +26,7 @@ class PyGineGame(ABC) :
         self.scenes = []
         self.ShowHitbox = False
         pg.display.set_caption("PyGine Window")
+        #mandatory
         self.imageLib = ImageLibrary("Assets")
     def run(self):
         while self.running:
