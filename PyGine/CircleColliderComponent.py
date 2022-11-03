@@ -12,8 +12,8 @@ class CircleColliderComponent(Component) :
         self.transform = parent.transform
 
     def update(self,dt) :
-
-        pg.draw.circle(Game.get().surface,(0,0,0,100),(int(self.transform.position.x - Camera.DX),
+        if(Debug.Debug.ShowCollidersBox) :
+            pg.draw.circle(Game.get().surface,(0,0,0,100),(int(self.transform.position.x - Camera.DX),
                          int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX,1)
 
 

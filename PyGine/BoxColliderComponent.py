@@ -4,8 +4,7 @@ import pygame as pg
 from PyGine.Camera import Camera
 from PyGine.Component import Component
 import PyGine.PyGinegame as Game
-from PyGine.Transform import Transform
-
+from PyGine import Debug
 class BoxColliderComponent(Component) :
     def __init__(self,parent) :
         super().__init__(parent)
@@ -13,7 +12,8 @@ class BoxColliderComponent(Component) :
         self.transform = parent.transform
 
     def update(self,dt) :
-        pg.draw.rect(Game.get().surface, (0,0,0),((
+        if (Debug.Debug.ShowCollidersBox):
+            pg.draw.rect(Game.get().surface, (0,0,0),((
                                                  int(self.transform.position.x - Camera.DX),
                                                  int(self.transform.position.y - Camera.DY) ),
                                                  (int(self.transform.scale.x * Camera.ZX),
