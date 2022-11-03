@@ -17,13 +17,23 @@ class GameObject(ABC) :
         self.started = False
 
     def start(self):
+        """
+        The start methode is called after the start of component
+        @use : init the variables you need
+        """
         pass
 
     def earlyStart(self):
+        """
+        The earlyStart methode is called before the start of the components
+        @use : declare the component or init the variables you need
+        """
         pass
 
-
     def Mstart(self):
+        """
+        Internal methode of PyGine, don't touch
+        """
         if not self.started :
             self.earlyStart()
             for c in self.Components :

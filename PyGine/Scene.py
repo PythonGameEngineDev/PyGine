@@ -11,7 +11,6 @@ class Scene(ABC) :
         pass
 
     def Mstart(self):
-
         self.earlyStart()
         for go in self.GameObjects:
             go.Mstart()
@@ -26,7 +25,6 @@ class Scene(ABC) :
 
         if(len(self.toBeRemoved) > 0) :
             self.rm()
-
 
 
     def Mend(self):
