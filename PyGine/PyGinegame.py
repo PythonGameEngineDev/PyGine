@@ -3,7 +3,7 @@ from abc import ABC
 import pygame as pg
 
 from PyGine.Scene import Scene
-
+from PyGine.ImageLibrary import ImageLibrary
 
 class PyGineGame(ABC) :
 
@@ -26,7 +26,7 @@ class PyGineGame(ABC) :
         self.scenes = []
         self.ShowHitbox = False
         pg.display.set_caption("PyGine Window")
-
+        self.imageLib = ImageLibrary("Assets")
     def run(self):
         while self.running:
             self.dt = self.clock.tick(self.fps)

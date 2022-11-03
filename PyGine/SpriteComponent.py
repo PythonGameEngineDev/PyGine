@@ -1,6 +1,7 @@
 from PyGine.Component import Component
-
-
+import pygame as pg
+import PyGine.PyGinegame as Game
+from PyGine.Camera import Camera
 class SpriteComponent(Component) :
     def __init__(self,parent, sprite=" ") :
         super().__init__(parent)
@@ -11,7 +12,9 @@ class SpriteComponent(Component) :
         pass
 
     def update(self,dt) :
-        pass
+        #scale the img to the transform scale
+        img = pg.transform.scale(Game.get().imageLib.getImage(self.sprite), (int(self.parent.transform.scale.x*Camera.ZX), int(self.parent.transform.scale.y*Camera.ZY)))
+        Game.get().surface.blit(img,((int(self.parent.transform.position.x - Camera.DX ),int(self.parent.transform.position.y- Camera.DY) )))
 
     def getSprite(self) :
         return self.sprite
