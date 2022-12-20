@@ -1,6 +1,8 @@
 from abc import ABC
 
 import pygame as pg
+from PyGine import PhysicCollisionModule
+import PyGine.Debug as Debug
 
 from PyGine.Scene import Scene
 from PyGine.ImageLibrary import ImageLibrary
@@ -25,6 +27,9 @@ class PyGineGame(ABC) :
         self.CurrentSceneID = -1
         self.scenes = []
         self.ShowHitbox = False
+
+        PhysicCollisionModule.PhysicCollisionModule()
+
         pg.display.set_caption("PyGine Window")
         #mandatory
         self.imageLib = ImageLibrary("Assets")
@@ -43,11 +48,14 @@ class PyGineGame(ABC) :
 
 
     def Mupdate(self):
+
+        PhysicCollisionModule.instance().Update()
         self.update()
         for e in pg.event.get() :
             if e.type == pg.QUIT :
                 exit()
         self.CurrentScene.Mupdate(self.dt)
+        Debug.resetCalculation()
 
 
     def setScene(self, ID):

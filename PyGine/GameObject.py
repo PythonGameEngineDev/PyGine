@@ -75,8 +75,13 @@ class GameObject(ABC) :
         return None
 
     def Mend(self):
+        for c in self.Components :
+            c.Mend()
         self.end()
 
     def end(self):
         pass
 
+    def onCollision(self,o):
+        for c in self.Components :
+            c.onCollide(o)

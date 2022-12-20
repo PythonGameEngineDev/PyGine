@@ -22,5 +22,13 @@ class Component() :
     def update(self,dt):
         pass
 
-    def onCollide(self):
+
+    def Mend(self):
+        self.end()
+
+    def end(self):
+        pass
+
+
+    def onCollide(self,obj):
         pass
