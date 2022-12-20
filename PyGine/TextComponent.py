@@ -2,10 +2,7 @@ from PyGine.Camera import Camera
 from PyGine.Component import Component
 import PyGine.PyGinegame as Game
 import pygame as pg
-
-
 from PyGine.Transform import Transform
-
 
 class TextComponent(Component) :
     def __init__(self, parent,text = " ",color = (255,0,255)):
@@ -24,4 +21,3 @@ class TextComponent(Component) :
 
     def update(self,dt):
         Game.get().surface.blit(self.textcmp,((int(self.transform.position.x + self.parent.transform.position.x - (Camera.DX+Camera.PX) ),int(self.transform.position.y + self.parent.transform.position.y- (Camera.DY+Camera.PY) )), (int(self.transform.scale.x*Camera.ZX), int(self.transform.scale.y*Camera.ZY))))
-
