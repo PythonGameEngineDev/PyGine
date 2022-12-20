@@ -1,10 +1,8 @@
 from abc import ABC
 
-from PyGine import PyGinegame as Game
+from PyGine import PyGinegame as Game, Component
 from PyGine.Camera import Camera
 from PyGine.Transform import Transform
-
-
 class GameObject(ABC) :
     def __init__(self,name="",tags=["gameObjects"]):
         self.tags = tags
@@ -15,6 +13,7 @@ class GameObject(ABC) :
         self.tracked = False
         self.Used = False
         self.started = False
+
 
     def start(self):
         """
@@ -47,19 +46,18 @@ class GameObject(ABC) :
 
     def Mupdate(self,dt):
 
-
-        if(not self.destroy) :
-            for composant in self.Components:
-                composant.update(dt)
-                if(self.destroy) :
-                    break
-        else :
+        if(self.destroy) :
             Game.get().CurrentScene.removeGameObject(self)
+        else :
+            for composant in self.Components:
+                composant.Mupdate(dt)
+                if(self.destroy) :
+                    return
+
 
         if self.tracked :
-            Camera.DX = self.transform.position.x - Game.get().width/2
-            Camera.DY = self.transform.position.y - Game.get().height/2
-
+            Camera.PX = Camera.DX+self.transform.position.x - Game.get().width/2
+            Camera.PY = Camera.DY+self.transform.position.y - Game.get().height/2
         self.update(dt)
 
     def addComponent(self, composant):
@@ -67,11 +65,8 @@ class GameObject(ABC) :
             composant.Mstart()
         self.Components.append(composant)
 
-
-
     def AttachCamera(self,state):
         self.tracked = state
-
 
     def getComponent(self,class_) :
         for el in self.Components :
@@ -84,3 +79,4 @@ class GameObject(ABC) :
 
     def end(self):
         pass
+
