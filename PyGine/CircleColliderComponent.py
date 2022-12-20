@@ -13,11 +13,12 @@ class CircleColliderComponent(Component) :
 
     def update(self,dt) :
         if(Debug.Debug.ShowCollidersBox) :
-            pg.draw.circle(Game.get().surface,(0,0,0,100),(int(self.transform.position.x - Camera.DX),
-                         int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX,1)
+            pg.draw.circle(Game.get().surface,(0,0,0,100),(int(self.transform.position.x - (Camera.PX+Camera.DX)),
+                         int(self.transform.position.y - (Camera.PY+Camera.DY)) ) , self.transform.scale.x*Camera.ZX,1)
 
 
     def collide(self,o):
+
         closestX = o.transform.position.x
         closestY = o.transform.position.y
         if abs(self.transform.position.x - (o.transform.position.x+o.transform.scale.x)) < abs(self.transform.position.x - closestX) :

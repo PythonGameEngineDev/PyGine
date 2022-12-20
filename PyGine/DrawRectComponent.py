@@ -20,8 +20,8 @@ class DrawRectComponent(Component) :
 
     def update(self,dt) :
         pg.draw.rect(Game.get().surface, self.color,((
-                                                 int(self.transform.position.x - Camera.DX),
-                                                 int(self.transform.position.y - Camera.DY) ),
+                                                 int(self.transform.position.x - (Camera.DX+Camera.PX)),
+                                                 int(self.transform.position.y - (Camera.DY+Camera.PY)) ),
                                                  (int(self.transform.scale.x * Camera.ZX),
                                                   int(self.transform.scale.y * Camera.ZY))))
 

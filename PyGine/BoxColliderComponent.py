@@ -14,8 +14,8 @@ class BoxColliderComponent(Component) :
     def update(self,dt) :
         if (Debug.Debug.ShowCollidersBox):
             pg.draw.rect(Game.get().surface, (0,0,0),((
-                                                 int(self.transform.position.x - Camera.DX),
-                                                 int(self.transform.position.y - Camera.DY) ),
+                                                 int(self.transform.position.x - (Camera.PX+Camera.DX)),
+                                                 int(self.transform.position.y - (Camera.PY+Camera.DY)) ),
                                                  (int(self.transform.scale.x * Camera.ZX),
                                                   int(self.transform.scale.y * Camera.ZY))),1)
 

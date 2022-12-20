@@ -1,7 +1,7 @@
 from abc import ABC
 
 
-class Scene(ABC) :
+class Scene(ABC):
     def __init__(self):
         self.GameObjects = []
         self.toBeRemoved = []
@@ -17,15 +17,12 @@ class Scene(ABC) :
         self.Used = True
         self.start()
 
-
-    def Mupdate(self,dt):
+    def Mupdate(self, dt):
         self.update(dt)
         for i in range(len(self.GameObjects)):
             self.GameObjects[i].Mupdate(dt)
-
-        if(len(self.toBeRemoved) > 0) :
+        if (len(self.toBeRemoved) > 0):
             self.rm()
-
 
     def Mend(self):
         self.end()
@@ -34,20 +31,17 @@ class Scene(ABC) :
     def start(self):
         pass
 
-
-    def update(self,dt):
+    def update(self, dt):
         pass
 
-
     def addGameObject(self, gameObject):
-        if self.Used :
+        if self.Used:
             gameObject.Mstart()
         self.GameObjects.append(gameObject)
 
-
-    def  rm(self):
-        for go in self.toBeRemoved :
-            if go in self.GameObjects :
+    def rm(self):
+        for go in self.toBeRemoved:
+            if go in self.GameObjects:
                 go.Mend()
                 self.GameObjects.remove(go)
         self.toBeRemoved.clear()
@@ -55,6 +49,10 @@ class Scene(ABC) :
     def end(self):
         pass
 
+    def getGameobject(self, name):
+        for el in self.GameObjects:
+            if el.name == name:
+                return el
 
     def removeGameObject(self, gameObject):
         self.toBeRemoved.append(gameObject)

@@ -16,15 +16,7 @@ class DrawShapeComponent(Component) :
         pass
 
     def update(self,dt):
-        if self.shape == "rect" :
-            pg.draw.rect(Game.get().surface, self.color,((
-                                                     int(self.transform.position.x - Camera.DX),
-                                                     int(self.transform.position.y - Camera.DY) ),
-                                                     (int(self.transform.scale.x * Camera.ZX),
-                                                      int(self.transform.scale.y * Camera.ZY))))
-        elif self.shape == "circle" :
-            pg.draw.circle(Game.get().surface,self.color,(int(self.transform.position.x - Camera.DX),
-                                                     int(self.transform.position.y - Camera.DY) ) , self.transform.scale.x*Camera.ZX)
+        pass
     def getSprite(self):
         return self.sprite
     def setSprite(self, sprite):

@@ -3,9 +3,9 @@ import sys
 
 class ImageLibrary():
     """ImageLibrary is a class that stores the images loaded by the PyGineGame class, and is used to access them"""
+    images = {}
     def __init__(self,assetFolder="Assets"):
         """Constructor for ImageLibrary"""
-        self.images = {}
         print()
         assert assetFolder != "", "You must specify an asset folder"
         self.LoadAllImages(sys.path[1]+"/"+assetFolder.removesuffix("/").removeprefix("/"))
@@ -19,33 +19,33 @@ class ImageLibrary():
 
     def addImage(self, name, path):
         """Add an image to the library, with a name and a path"""
-        self.images[name] = pygame.image.load(path).convert()
+        ImageLibrary.images[name] = pygame.image.load(path).convert()
         #scale the image to a constant
-        self.images[name] = pygame.transform.scale(self.images[name], (100,100))
-        self.images[name].set_colorkey((255,255,255))
-        self.images[name].convert_alpha()
+        ImageLibrary.images[name] = pygame.transform.scale(self.images[name], (100,100))
+        ImageLibrary.images[name].set_colorkey((255,255,255))
+        ImageLibrary.images[name].convert_alpha()
 
     def getImage(self, name):
         """Get an image from the library, with a name"""
-        if name in self.images:
-            return self.images[name]
+        if name in ImageLibrary.images:
+            return ImageLibrary.images[name]
         else:
-            return self.images["default"]
+            return ImageLibrary.images["default"]
 
     def removeImage(self, name):
         """Remove an image from the library, with a name"""
-        if name in self.images:
-            del self.images[name]
+        if name in ImageLibrary.images:
+            del ImageLibrary.images[name]
 
     def listImages(self):
         """List all the images in the library"""
-        for key in self.images:
+        for key in ImageLibrary.images:
             print(key)
 
     def clear(self):
         """Clear the library"""
-        self.images = {}
-        self.images["default"] = pygame.image.load("PyGine/DefaultImage.png")
-        self.images["default"] = pygame.transform.scale(self.images["default"], (100,100))
-        self.images["default"].set_colorkey((255,255,255))
-        self.images["default"].convert_alpha()
+        ImageLibrary.images = {}
+        ImageLibrary.images["default"] = pygame.image.load("PyGine/DefaultImage.png")
+        ImageLibrary.images["default"] = pygame.transform.scale(self.images["default"], (100,100))
+        ImageLibrary.images["default"].set_colorkey((255,255,255))
+        ImageLibrary.images["default"].convert_alpha()

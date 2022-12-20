@@ -1,7 +1,7 @@
 from abc import ABC
 
 
-class Component(ABC) :
+class Component() :
     def __init__(self, parent,name="") :
         self.name = name
         self.parent = parent
@@ -17,5 +17,10 @@ class Component(ABC) :
     def earlyStart(self):
         pass
 
+    def Mupdate(self,dt):
+        self.update(dt)
     def update(self,dt):
+        pass
+
+    def onCollide(self):
         pass
