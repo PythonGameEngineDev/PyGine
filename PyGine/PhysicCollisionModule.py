@@ -5,16 +5,11 @@ from PyGine.CircleColliderComponent import CircleColliderComponent
 from PyGine.BoxColliderComponent import BoxColliderComponent
 import PyGine.Debug as Debug
 
-
 class PhysicCollisionModule :
-
-
     instance = None
 
     def __init__(self) :
-
         self.CollidersList = []
-
 
     def AddCollision(self, o) :
         self.CollidersList.append(o)
@@ -43,7 +38,6 @@ class PhysicCollisionModule :
             elif o1.__class__ == BoxColliderComponent and o2.__class__ == BoxColliderComponent :
                 self.BoxToBox(o1,o2)
 
-
     def BoxToBox(self, o, i) :
         if (o.transform.position.x + o.transform.scale.x > i.transform.position.x > o.transform.position.x) or \
                 (i.transform.position.x + i.transform.scale.x > o.transform.position.x > i.transform.position.x):
@@ -70,8 +64,6 @@ class PhysicCollisionModule :
             #call collision
             o1.CallCollide(o2)
             o2.CallCollide(o1)
-
-
 
 def instance():
 

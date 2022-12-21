@@ -70,7 +70,8 @@ class GameObject(ABC) :
 
     def getComponent(self,class_) :
         for el in self.Components :
-            if el.__class__ == class_ :
+
+            if el.__class__.__name__ == class_ :
                 return el
         return None
 
