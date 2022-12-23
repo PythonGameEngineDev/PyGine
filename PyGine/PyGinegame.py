@@ -32,13 +32,17 @@ class PyGineGame(ABC) :
 
         pg.display.set_caption("PyGine Window")
         #mandatory
-        self.imageLib = ImageLibrary("Assets")
+        self.imageLib = None
     def run(self):
         while self.running:
             self.dt = self.clock.tick(self.fps)
             self.Mupdate()
             self.FEN.blit(self.surface, (0, 0))
             pg.display.flip()
+
+    def setImageLibFolder(self,path):
+        self.imageLib = ImageLibrary(path)
+
 
     def update(self):
         pass
