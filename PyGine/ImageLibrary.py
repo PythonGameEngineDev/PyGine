@@ -1,5 +1,5 @@
 import pygame
-import sys
+import sys,os
 
 class ImageLibrary():
     """ImageLibrary is a class that stores the images loaded by the PyGineGame class, and is used to access them"""
@@ -8,11 +8,14 @@ class ImageLibrary():
         """Constructor for ImageLibrary"""
         print()
         assert assetFolder != "", "You must specify an asset folder"
+        #fint the root folder
+
+        root = os.path.dirname(os.path.abspath(__file__))
         self.LoadAllImages(sys.path[1]+"/"+assetFolder.removesuffix("/").removeprefix("/"))
 
     def LoadAllImages(self, path):
         """Load all the images in a folder"""
-        import os
+
         for file in os.listdir(path):
             if file.endswith(".png"):
                 self.addImage(file, path +"/"+ file)
