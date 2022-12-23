@@ -13,11 +13,13 @@ class ImageLibrary():
 
         root = os.path.abspath(sys.modules[PyGine.PyGinegame.get().__class__.__module__].__file__)
 
-        print("Loading Img from : ",root)
+        root = root.replace("\\","/")
         #remove the two last folder from the path
         root = root.split("/")
         root = root[:-1]
         root = "/".join(root)
+
+        print("loading assets from : ", root)
 
         self.LoadAllImages(root+"/"+assetFolder.removesuffix("/").removeprefix("/"))
 
