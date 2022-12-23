@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-VERSION = '0.0.12'
+VERSION = '0.0.13'
 DESCRIPTION = 'A simple 2D game engine'
 LONG_DESCRIPTION = 'A simple 2D game engine working as unity but in python'
 
