@@ -32,3 +32,7 @@ class Component() :
 
     def onCollide(self,obj):
         pass
+
+    def onMouseRight(self,button):
+        pass
+

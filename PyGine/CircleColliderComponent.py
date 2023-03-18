@@ -17,3 +17,5 @@ class CircleColliderComponent(ColliderComponent) :
 
     def CallCollide(self,o):
         self.parent.onCollision(o)
+
+    

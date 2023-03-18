@@ -6,6 +6,8 @@ import PyGine.Debug as Debug
 
 from PyGine.Scene import Scene
 from PyGine.ImageLibrary import ImageLibrary
+from PyGine.DefaultScene import DefaultScene
+
 
 class PyGineGame(ABC) :
 
@@ -24,15 +26,23 @@ class PyGineGame(ABC) :
         self.fps = 600
         self.dt = 0
         self.CurrentScene = None
-        self.CurrentSceneID = -1
+        self.CurrentSceneID = 0
         self.scenes = []
         self.ShowHitbox = False
+        self.BG_COLOR = (0,0,0)
 
         PhysicCollisionModule.PhysicCollisionModule()
 
         pg.display.set_caption("PyGine Window")
         #mandatory
         self.imageLib = None
+        
+        self.addScene(DefaultScene())
+        self.setScene(0)
+
+    def setBgColor(self,color):
+        self.BG_COLOR = color
+
     def run(self):
         while self.running:
             self.dt = self.clock.tick(self.fps)
@@ -52,6 +62,9 @@ class PyGineGame(ABC) :
 
 
     def Mupdate(self):
+        
+
+        self.surface.fill(self.BG_COLOR)
 
         PhysicCollisionModule.instance().Update()
         self.update()
@@ -72,6 +85,7 @@ class PyGineGame(ABC) :
 
     def instanciate(self,obj):
         self.getCurrentScene().addGameObject(obj)
+        return obj
 
     def getSceneID(self):
         return self.CurrentSceneID

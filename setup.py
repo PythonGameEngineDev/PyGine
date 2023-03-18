@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
-import codecs
-import os
 
-VERSION = '0.0.13'
+
+VERSION = '0.0.14'
 DESCRIPTION = 'A simple 2D game engine'
 LONG_DESCRIPTION = 'A simple 2D game engine working as unity but in python'
 
@@ -13,7 +12,6 @@ setup(
     author="PyGIne (Ronan.T)",
     author_email="<ronan.tremoureux@gmail.com>",
     description=DESCRIPTION,
-    long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     install_requires=['pygame'],
