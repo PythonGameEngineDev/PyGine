@@ -12,14 +12,15 @@ from PyGine.TextComponent import TextComponent
 from PyGine.DrawShapeComponent import DrawShapeComponent
 from PyGine.DrawRectComponent import DrawRectComponent
 from PyGine.DrawCircleComponent import DrawCircleComponent
+from PyGine.DrawLineComponent import DrawLineComponent
 
 from PyGine.Debug import PrintDebug
 
 import PyGine.Debug
 
-from PyGine.PyGinegame import PyGineGame
-import PyGine.PyGinegame as Game
+from PyGine.PyGinegame import PyGineGame as Game
 
 import PyGine.KeyListener
+import PyGine.MouseListener
 from PyGine.Vector3 import Vector3
 import PyGine.ImageLibrary

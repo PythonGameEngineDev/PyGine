@@ -70,7 +70,6 @@ class GameObject(ABC) :
 
     def getComponent(self,class_) :
         for el in self.Components :
-
             if el.__class__.__name__ == class_ :
                 return el
         return None
@@ -86,3 +85,7 @@ class GameObject(ABC) :
     def onCollision(self,o):
         for c in self.Components :
             c.onCollide(o)
+
+    def onMouseClick(self,button):
+        for c in self.Components :
+            c.onMouseClick(button)
