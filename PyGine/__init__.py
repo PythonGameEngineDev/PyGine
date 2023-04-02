@@ -3,6 +3,8 @@ from PyGine.GameObject import GameObject
 from PyGine.Transform import Transform
 from PyGine.Component import Component
 from PyGine.Camera import Camera
+from PyGine.Overlay import Overlay
+
 
 from PyGine.CircleColliderComponent import CircleColliderComponent
 from PyGine.BoxColliderComponent import BoxColliderComponent
@@ -20,7 +22,7 @@ import PyGine.Debug
 
 from PyGine.PyGinegame import PyGineGame as Game
 
-import PyGine.KeyListener
-import PyGine.MouseListener
+from PyGine.KeyListener import KeyListener
+from PyGine.MouseListener import MouseListener
 from PyGine.Vector3 import Vector3
-import PyGine.ImageLibrary
+from PyGine.ImageLibrary import ImageLibrary

@@ -9,9 +9,7 @@ from PyGine.Transform import Transform
 class DrawRectComponent(Component) :
     def __init__(self,parent,color ) :
         super().__init__(parent)
-
         self.parent = parent
-
         self.transform = parent.transform
         self.color = color
 
@@ -20,10 +18,10 @@ class DrawRectComponent(Component) :
 
     def update(self,dt) :
         pg.draw.rect(Game.get().surface, self.color,((
-                                                 int(self.transform.position.x - (Camera.DX+Camera.PX)),
-                                                 int(self.transform.position.y - (Camera.DY+Camera.PY)) ),
-                                                 (int(self.transform.scale.x * Camera.ZX),
-                                                  int(self.transform.scale.y * Camera.ZY))))
+                                                 int(self.parent.relativeTransform.position.x - (Camera.DX+Camera.PX)*(not self.parent.fixed)),
+                                                 int(self.parent.relativeTransform.position.y - (Camera.DY+Camera.PY)*(not self.parent.fixed)) ),
+                                                 (int(self.parent.relativeTransform.scale.x * Camera.ZX*(not self.parent.fixed)),
+                                                  int(self.parent.relativeTransform.scale.y * Camera.ZY*(not self.parent.fixed)))))
 
     def getSprite(self) :
         return self.sprite

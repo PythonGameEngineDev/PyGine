@@ -38,6 +38,7 @@ class Scene(ABC):
         if self.Used:
             gameObject.Mstart()
         self.GameObjects.append(gameObject)
+        return gameObject
 
     def rm(self):
         for go in self.toBeRemoved:

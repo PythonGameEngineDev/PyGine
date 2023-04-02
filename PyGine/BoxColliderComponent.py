@@ -1,12 +1,7 @@
-
 import pygame as pg
 from PyGine.ColliderComponent import ColliderComponent
-
-import PyGine
 from PyGine.Camera import Camera
-
 import PyGine.PyGinegame as Game
-
 from PyGine import Debug
 
 
