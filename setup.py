@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-VERSION = '0.0.14'
+VERSION = '0.0.15'
 DESCRIPTION = 'A simple 2D game engine'
 LONG_DESCRIPTION = 'A simple 2D game engine working as unity but in python'
 
