@@ -5,11 +5,11 @@ import pygame as pg
 from PyGine.Transform import Transform
 
 class TextComponent(Component) :
-    def __init__(self, parent,text = " ",color = (255,0,255)):
+    def __init__(self, parent,text = " ",color = (255,0,255),size = 32):
         super().__init__(parent)
         self.transform = Transform()
         self.text = text
-        self.font = pg.font.Font('freesansbold.ttf', 32)
+        self.font = pg.font.Font('freesansbold.ttf', size)
         self.color = color
         self.textcmp =self.font.render(self.text,True,self.color)
 
