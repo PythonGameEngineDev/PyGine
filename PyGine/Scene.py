@@ -50,7 +50,7 @@ class Scene(ABC):
     def end(self):
         pass
 
-    def getGameobject(self, name):
+    def getGameObject(self, name):
         for el in self.GameObjects:
             if el.name == name:
                 return el

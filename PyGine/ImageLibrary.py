@@ -27,8 +27,7 @@ class ImageLibrary():
         """Load all the images in a folder"""
 
         for file in os.listdir(path):
-            if file.endswith(".png"):
-                self.addImage(file, path +"/"+ file)
+            self.addImage(file, path +"/"+ file)
 
     def addImage(self, name, path):
         """Add an image to the library, with a name and a path"""

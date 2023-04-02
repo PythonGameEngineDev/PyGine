@@ -4,8 +4,6 @@ from PyGine.Camera import Camera
 import PyGine.PyGinegame as Game
 from PyGine import Debug
 
-
-
 class BoxColliderComponent(ColliderComponent) :
     def __init__(self,parent) :
         super().__init__(parent)

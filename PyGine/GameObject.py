@@ -11,7 +11,7 @@ class GameObject(ABC) :
         self.transform = Transform()
         self.relativeTransform = Transform()
         self.Components = []
-        self.destroy = False
+        self.isDestroyed = False
         self.tracked = False
         self.Used = False
         self.started = False
@@ -57,12 +57,12 @@ class GameObject(ABC) :
             self.relativeTransform.rotation += self.parent.relativeTransform.rotation
 
 
-        if(self.destroy) :
+        if(self.isDestroyed) :
             Game.get().CurrentScene.removeGameObject(self)
         else :
             for composant in self.Components:
                 composant.Mupdate(dt)
-                if(self.destroy) :
+                if(self.isDestroyed) :
                     return
 
         if self.tracked :
@@ -102,7 +102,7 @@ class GameObject(ABC) :
             c.onMouseClick(button)
 
     def destroy(self) :
-        self.destroy = True
+        self.isDestroyed = True
 
     def setCameraTracking(self,state):
         self.tracked = state

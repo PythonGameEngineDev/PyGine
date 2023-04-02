@@ -18,8 +18,8 @@ class DrawCircleComponent(Component) :
         pass
 
     def update(self,dt) :
-        pg.draw.circle(Game.get().surface,self.color,(int((self.parent.relativeTransform.position.x + self.relativeTransform.position.x) - (Camera.DX+Camera.PX)*(not self.parent.fixed)),
-                         int((self.parent.relativeTransform.position.y +self.relativeTransform.position.y) - (Camera.DY+Camera.PY)*(not self.parent.fixed)) ) , self.parent.relativeTransform.scale.x*Camera.ZX if (not self.parent.fixed) else self.parent.relativeTransform.scale.x)
+        pg.draw.circle(Game.get().surface,self.color,(int((self.parent.relativeTransform.position.x + self.transform.position.x) - (Camera.DX+Camera.PX)*(not self.parent.fixed)),
+                         int((self.parent.relativeTransform.position.y +self.transform.position.y) - (Camera.DY+Camera.PY)*(not self.parent.fixed)) ) , self.parent.relativeTransform.scale.x*Camera.ZX if (not self.parent.fixed) else self.parent.relativeTransform.scale.x)
 
 
     def getSprite(self) :
