@@ -20,4 +20,4 @@ class TextComponent(Component) :
         self.textcmp = self.font.render(text,True,self.color)
 
     def update(self,dt):
-        Game.get().surface.blit(self.textcmp,((int(self.parent.relativeTransform.position.x - (Camera.DX+Camera.PX)*(not self.parent.fixed) ),int(self.parent.relativeTransform.position.y- (Camera.DY+Camera.PY)*(not self.parent.fixed) )), (int(self.parent.relativeTransform.scale.x*Camera.ZX*(not self.parent.fixed)), int(self.parent.relativeTransform.scale.y*Camera.ZY*(not self.parent.fixed)))))
+        Game.get().surface.blit(self.textcmp,((int(self.parent.relativeTransform.position.x - (Camera.DX+Camera.PX)*(not self.parent.fixed) ),int(self.parent.relativeTransform.position.y- (Camera.DY+Camera.PY)*(not self.parent.fixed) )), (int(self.parent.relativeTransform.scale.x*Camera.ZX if (not self.parent.fixed) else self.parent.relativeTransform.scale.x), int(self.parent.relativeTransform.scale.y*Camera.ZY if (not self.parent.fixed) else self.parent.relativeTransform.scale.y))))

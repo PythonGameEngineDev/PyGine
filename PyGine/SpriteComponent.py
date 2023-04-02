@@ -15,7 +15,7 @@ class SpriteComponent(Component) :
     def update(self,dt) :
         #scale the img to the transform scale
         img = pg.transform.scale(ImageLibrary.images[self.sprite], (
-        int(self.parent.relativeTransform.scale.x * Camera.ZX), int(self.parent.relativeTransform.scale.y * Camera.ZY*(not self.parent.fixed))))
+        int(self.parent.relativeTransform.scale.x * Camera.ZX if (not self.parent.fixed) else self.parent.relativeTransform.scale.x), int(self.parent.relativeTransform.scale.y *Camera.ZY if (not self.parent.fixed) else self.parent.relativeTransform.scale.y)))
         Game.get().surface.blit(img,((int(self.parent.relativeTransform.position.x - (Camera.DX+Camera.PX)*(not self.parent.fixed) ),int(self.parent.relativeTransform.position.y-( Camera.DY+Camera.PY)*(not self.parent.fixed)) )))
 
     def getSprite(self) :
