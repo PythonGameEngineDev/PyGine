@@ -34,6 +34,7 @@ class PyGineGame(ABC) :
         PhysicCollisionModule.PhysicCollisionModule()
 
         pg.display.set_caption("PyGine Window")
+        pg.display.set_icon(pg.Surface((1,1)))
         #mandatory
         self.imageLib = None
         
